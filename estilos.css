@@ -1,312 +1,354 @@
-body {
+/* ===================================================
+   1. RESET Y BASE
+   =================================================== */
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: 'Open Sans', sans-serif;
   padding: 0;
-  height: 100vh;
-  justify-content: center;
-  align-items: flex-start;
-  
-}
-h3{
-  color: azure;
-  
-  padding-left: 45%;
-  
 }
 
+body {
+  font-family: 'Open Sans', sans-serif;
+  width: 100%;
+  overflow-x: hidden; /* Evita el scroll horizontal en móviles */
+  background-color: #03132C;
+}
+
+/* Evita que las imágenes sobresalgan */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Animación de fondo original */
 @keyframes cascadeBackground {
-  0% {
-    background-color:  #3366CC; 
-  }
-  13% {
-    background-color:  #2D5BB8; 
-  }
-  25% {
-    background-color:  #2751A5; 
-  }
-  37% {
-    background-color:  #214690; 
-  }
-  50% {
-    background-color:  #1B3C7C; 
-  }
-  63% {
-    background-color:  #153268; 
-  }
-  75% {
-    background-color: #0F2854; 
-  }
-  87% {
-    background-color: #091E40; 
-  }
-  100% {
-    background-color: #03132C; 
-  }
+  0%   { background-color: #3366CC; }
+  13%  { background-color: #2D5BB8; }
+  25%  { background-color: #2751A5; }
+  37%  { background-color: #214690; }
+  50%  { background-color: #1B3C7C; }
+  63%  { background-color: #153268; }
+  75%  { background-color: #0F2854; }
+  87%  { background-color: #091E40; }
+  100% { background-color: #03132C; }
 }
 
-header{
-  height: 65px;
+/* ===================================================
+   2. HEADER Y NAVEGACIÓN
+   =================================================== */
+header {
+  min-height: 65px;
   background-color: #0F2854;
   color: white;
   display: flex;
   align-items: center;
-  padding-left: 25px;
   justify-content: space-between;
-}
-nav {
-  margin-right: 100px;
-}
-nav ul {
-  list-style-type: none; 
-  margin: 0;
-  padding: 0;
+  padding: 10px 5%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-nav ul li {
-  display: inline; 
-  margin-right: 20px; 
+header h3 {
+  color: azure;
+  margin: 0;
+  padding: 0; /* Eliminado el padding-left de 45% */
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 nav ul li a {
-  color: white; 
-  text-decoration: none; 
+  color: white;
+  text-decoration: none;
   font-size: 18px;
+  transition: color 0.3s;
 }
 
 nav ul li a:hover {
-  text-decoration: underline;  
-} 
-.cara{
-  border-radius: 500px;
-  height: 200px;
+  text-decoration: underline;
 }
-.uno{
+
+/* ===================================================
+   3. SECCIÓN 1: HEROFRAME / PRESENTACIÓN
+   =================================================== */
+.background-container {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - 65px); /* Altura fluida en vez de fija */
+  background-image: url('https://fondosmil.co/fondo/52714.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.uno {
   width: 100%;
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  height: calc(100vh - 65px);
-  
-  color: white;
-  
-  
+  align-items: center;
 }
-.caja-central{
-  margin-top: 10%;
-  width: 50%;
+
+.caja-central {
+  width: 80%;
+  max-width: 900px;
   display: flex;
   flex-direction: row;
   border-radius: 20px;
   overflow: hidden;
-  height: 50%;
-  
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  transition: transform 0.3s, opacity 0.3s;
 }
-.caja-cara{
+
+.caja-central:hover {
+  transform: scale(1.02);
+  opacity: 0.95;
+}
+
+.caja-cara {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 40%;
+  padding: 20px;
   animation: cascadeBackground 5s infinite linear;
 }
-.caja-presentacion{
+
+.cara {
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+}
+
+.caja-presentacion {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 60%;
   animation: cascadeBackground 5s infinite linear;
   color: #F2F2F2;
-  padding: 10px;
- 
+  padding: 30px;
 }
 
-.dos{
-
-  height: 700px;
+/* ===================================================
+   4. SECCIÓN 2: SOBRE MÍ Y CONOCIMIENTOS
+   =================================================== */
+.dos {
+  min-height: auto;
+  padding: 60px 10%; /* Usamos % responsivo en vez de padding fijo alto */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: aliceblue;
-  padding-left: 20%;
-  padding-right: 20%;
   animation: cascadeBackground 10s infinite linear;
+  text-align: center;
 }
-.aptitudes{
-  width: 50%;
+
+.dos h2 {
+  margin: 20px 0 10px 0;
 }
-.lista-horizontal{
+
+.dos p {
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+.conocimientos {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px 0;
+}
+
+.lista-horizontal {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
   padding-top: 10px;
 }
 
-.tech{
-  height: 90px;
+.tech {
+  height: 70px;
+  object-fit: contain;
 }
 
-.tres{
+/* ===================================================
+   5. SECCIÓN 3: PROYECTOS
+   =================================================== */
+.tres {
   background-color: #0F2854;
-  height: 600px;
+  padding: 60px 20px;
   display: flex;
-  justify-content: flex-start;
   flex-direction: column;
   align-items: center;
   color: #F2F2F2;
-  
 }
-.proyectos{
-  width: 60%;
+
+.tres h2 {
+  margin-bottom: 30px;
+}
+
+.proyectos {
+  width: 90%;
+  max-width: 1100px;
   display: flex;
   justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
-.card{
+
+.card {
   text-align: center;
-  width: 30%;
+  width: 300px; /* Tamaño base fijo en flexbox */
   border: solid #F2F2F2 1px;
   border-radius: 10px;
-  padding: 10px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.05);
 }
-.card img{
-  width: 90%;
+
+.card img {
+  width: 100%;
+  max-height: 150px;
+  object-fit: contain;
+  margin: 15px 0;
 }
+
 .card a, footer a {
   color: white;
 }
 
-.red-social{
-  height: 60px;
-  background-color: #F2F2F2;
-  border-radius: 10px;
-}
-
-footer{
-  animation: cascadeBackground 5s infinite linear;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  color: #F2F2F2;
-  height: 250px;
-}
-.contacto{
-  width: 30%;
-  display: flex;
-  justify-content: center;
-}
-
-@media (max-width: 1000px) {
-  .caja-central{
-      width: 90%;
-      height: 70%;
-      flex-direction: column;
-  }
-  .caja-cara{
-      width: 100%;
-      height: 50%;
-  }
-  .caja-presentacion{
-      width: 100%;
-      height: 50%;
-      align-items: flex-start;
-  }
-  .conocimientos{
-      width: auto;
-  }
-  .dos{
-      height: auto;
-      padding: 0 10px 10px 10px;
-
-  }
-  .tres{
-      height: auto;
-      
-      
-  }
-  .proyectos{
-      flex-direction: column;
-      width: 100%;
-      align-items: center;
-      justify-content: space-between;
-      padding-bottom: 20px;
-      
-  }
-  .card{
-      width: 80%;
-      margin-top: 20px;
-      
-  }
-  .red-social{
-      margin: 0 10px 0 10px;
-  }
-}
-.background-container {
-  position: relative;
-  width: 100%; 
-  height: 95vh; 
-  background-image: url('https://fondosmil.co/fondo/52714.jpg');
-  background-size: cover; 
-  background-position: center; 
-  
-}
-.caja-central:hover{
-  transform: scale(1.05); 
-  opacity: 0.8; 
-}
-.proyectos:hover{
-  transform: scale(1.05); 
-  opacity: 0.8; 
-}
-
-
-label {
-  display: block; 
-  margin-bottom: 10px; 
-}
-
-
-input[type="text"],
-input[type="email"],
-textarea {
-  width: 100%; 
-  padding: 10px; 
-  margin-bottom: 20px; 
-  border: 1px solid #ccc; 
-  border-radius: 5px; 
-  box-sizing: border-box; 
-}
-
-/* Estilo para el botón de enviar */
-button[type="submit"] {
-  background-color: #007bff; /* Color de fondo */
-  color: #fff; /* Color de texto */
-  padding: 10px 20px; /* Relleno */
-  border: none; /* Sin borde */
-  border-radius: 5px; /* Esquinas redondeadas */
-  cursor: pointer; /* Cambiar el cursor al pasar sobre él */
-}
-
-/* Estilo para el formulario */
-#contactForm {
-  max-width: 500px; /* Ancho máximo del formulario */
-  margin: 0 auto; /* Centrar el formulario horizontalmente */
-}
-.formulario{
-  height: 700px;
+/* ===================================================
+   6. SECCIÓN 4: FORMULARIO DE CONTACTO
+   =================================================== */
+.formulario {
+  padding: 60px 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: aliceblue;
-  padding-left: 20%;
-  padding-right: 20%;
   animation: cascadeBackground 20s infinite linear;
-  
 }
-.tituloFormu{
+
+.tituloFormu {
   color: azure;
-  
-  padding-left: 5%;
+  text-align: center;
+  margin-bottom: 25px;
+  padding: 0;
 }
 
+#contactForm {
+  width: 100%;
+  max-width: 500px;
+}
 
+label {
+  display: block;
+  margin-bottom: 5px;
+}
 
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%; /* Botón completo para fácil click táctil */
+}
+
+/* ===================================================
+   7. FOOTER
+   =================================================== */
+footer {
+  animation: cascadeBackground 5s infinite linear;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #F2F2F2;
+  padding: 40px 20px;
+  gap: 15px;
+}
+
+.contacto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.contacto hr {
+  height: 30px;
+  border: 0.5px solid #fff;
+}
+
+.red-social {
+  height: 50px;
+  width: 50px;
+  padding: 5px;
+  background-color: #F2F2F2;
+  border-radius: 10px;
+  transition: transform 0.2s;
+}
+
+.red-social:hover {
+  transform: scale(1.1);
+}
+
+/* ===================================================
+   8. MEDIA QUERIES (Móviles y Tablets)
+   =================================================== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 10px;
+  }
+
+  nav ul {
+    justify-content: center;
+  }
+
+  .caja-central {
+    width: 95%;
+    flex-direction: column;
+  }
+
+  .caja-cara, .caja-presentacion {
+    width: 100%;
+  }
+
+  .caja-presentacion {
+    text-align: center;
+  }
+
+  .dos {
+    padding: 40px 5%;
+  }
+
+  .card {
+    width: 100%; /* Ocupa el ancho completo disponible en celular */
+  }
+}
