@@ -12,14 +12,15 @@
         <h3>        Jonatan Lazarte       </h3>
         <nav>
             <ul>
-                <li><a href="file:///C:/Users/jonat/Desktop/Repositorio%20GitHub/portfolio/Index.html#inicio">Inicio</a></li>
+                <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#sobre-mi">Sobre mí</a></li>
                 <li><a href="#conocimientos">Conocimientos</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
                 <li><a href="#contactForm">Contacto</a></li>
             </ul>
         </nav>
     </header>
-    <div class="background-container">
+    <div class="background-container" id="inicio">
 
         <section class="uno">
             <div class="caja-central">
@@ -38,34 +39,54 @@
     </section>
 </div>
 
-    <section class="dos">
-            <h2 id="sobre-mi">Sobre mí</h2>
-            <p>
-                Soy estudiante de la carrera Tecnico Universitario en Progrmación desde Marzo 2022.Desde entonces y con la ayuda del lenguaje C++
-                estuve capacitandome en los fundamentos de la programación estructurada y Orientada a objetos, actualmente realizo aplicaciones de escritorio en C# conectadas a una
-                base de datos sql Sever.
-                He realizado de manera autodidacta un curso de Java en la plataforama Udemy
-            </p>
-            <h2 id="conocimientos">Conocimientos</h2>
-          
-            <div class="conocimientos">
-                <div class="lista-horizontal">
-                    <img src="https://www.horuss.com.mx/wp-content/uploads/2019/04/c.png" class="tech" alt="">
-                    <img src="https://logodix.com/logo/1137946.png" class="tech" alt="">
-                    <img src="https://download.logo.wine/logo/Java_(programming_language)/Java_(programming_language)-Logo.wine.png" class="tech" alt="">
-                    <img src="https://img.icons8.com/color/480/microsoft-sql-server.png" class="tech" alt="">
-                </div>
-               
-            </div>
-            <h2>Cursos realizados</h2>
-            <ul>
-                <li>Curso Java a profundidad #Plataforma Udemy</li>
-                
-            </ul>
+    <section id="sobre-mi" class="dos">
+            <h2 >Sobre mí</h2>
+       <p>
+        Soy <strong>Desarrollador de Software</strong> y <strong>Técnico Universitario en Programación</strong> graduado de la UTN FRGP. Me enfoco en construir aplicaciones eficientes, bien estructuradas y escalables.
+    </p>
+
+    <p>
+        Tengo experiencia desarrollando software con <strong>C# / .NET</strong> y <strong>Java</strong>, integrados a bases de datos <strong>SQL Server</strong> mediante consultas y procedimientos almacenados. Mi base lógica se construyó sobre <strong>C++</strong>, dándome una comprensión profunda de POO y del manejo de memoria. Además, la participación en proyectos grupales universitarios me permitió afianzar el trabajo colaborativo con <strong>Git y GitHub</strong>.
+    </p>
+
+    <p>
+        Me apasiona resolver problemas mediante código y aprender de forma continua. Busco sumar valor en proyectos desafiantes donde pueda aportar mis conocimientos técnicos y continuar creciendo profesionalmente.
+    </p>
         </section>
+
+        <Slection id="conocimientos" class="tres">
+            <h2 >Conocimientos</h2>
+
+<div class="conocimientos">
+    <div class="lista-horizontal">
+        <div class="tech-item">
+            <img src="https://logodix.com/logo/1137946.png" class="tech" alt="C++">
+            <span>C++</span>
+        </div>
+        <div class="tech-item">
+            <img src="https://images.icon-icons.com/2415/PNG/512/csharp_plain_logo_icon_146577.png" class="tech" alt="C#">
+            <span>C# / .NET</span>
+        </div>
+        <div class="tech-item">
+            <img src="https://download.logo.wine/logo/Java_(programming_language)/Java_(programming_language)-Logo.wine.png" class="tech" alt="Java">
+            <span>JAVA</span>
+        </div>
+        <div class="tech-item">
+            <img src="https://img.icons8.com/color/480/microsoft-sql-server.png" class="tech" alt="SQL Server">
+            <span>SQL Server</span>
+        </div>
+        <div class="tech-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" class="tech" alt="Git y GitHub">
+            <span>Git / GitHub</span>
+        </div>
+    </div>
+</div>
+
+
+        </Slection>
     
    
-    <section class="tres">
+    <section id="proyectos" class="cuatro">
         <h2>Mis Proyectos</h2>
         <div class="proyectos">
             <div class="card">
@@ -79,6 +100,8 @@
            
               
     </section>
+
+
     <section class="formulario">
         <h3 class="tituloFormu">¿Tenes alguna propuesta acorde a mi perfil? Hablemos</h3>
         <form id="contactForm">
@@ -107,6 +130,8 @@
               </form>
 
     </section>
+
+
     <footer>
         <h2 id="contacto">Redes</h2>
             <div class="contacto">
